@@ -38,7 +38,7 @@ int		char_cmp(char *map, int i, int x, int n)
 		return (1);
 	}
 	return (0);
-}	
+}
 
 int		verif_tetri(char *map)
 {
@@ -52,7 +52,7 @@ int		verif_tetri(char *map)
 		if (map[i] == '#' && map[i + 1] == '\n' && map[i + 2] == '#')
 		{
 			i = 0;
-			break;
+			break ;
 		}
 		i++;
 	}
@@ -68,9 +68,9 @@ int		tetri_cmp(char *new_map, char *map, int n)
 	int	x;
 	int	j;
 
-	j = 0;
+	j = -1;
 	x = 0;
-	while (new_map[j])
+	while (new_map[++j])
 	{
 		if (new_map[j] == '#')
 		{
@@ -83,7 +83,6 @@ int		tetri_cmp(char *new_map, char *map, int n)
 		}
 		if (new_map[j] == '\n' && check_len(map) > 4)
 			x += (check_len(map) - 4);
-		j++;
 	}
 	if (verif_tetri(map) == 0)
 	{
@@ -98,10 +97,10 @@ void	pose_up_left(char *new_map, char *map)
 	int	n;
 
 	n = 0;
- 	if (check_len(new_map) > check_len(map))
- 	{
- 		map = add_new_space(map);
- 		move_tetri(map);
- 	}
+	if (check_len(new_map) > check_len(map))
+	{
+		map = add_new_space(map);
+		move_tetri(map);
+	}
 	tetri_cmp(new_map, map, n);
 }

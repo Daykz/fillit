@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, char const *src, size_t n)
+char				*ft_strncpy(char *dest, char const *src, size_t n)
 {
-	unsigned int i;
-	
+	unsigned int	i;
+
 	i = ft_strlen(src);
 	if (i < n)
 	{

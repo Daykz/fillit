@@ -12,20 +12,6 @@
 
 #include "fillit.h"
 
-int 	check_len(char *new_map)
-{
-	int	i;
-
-	i = 0;
-	while (new_map[i])
-	{
-		if (new_map[i] == '\n')
-			return (i);
-		i++;
-	}
-	return (0);
-}
-
 int		supp_line(char *new_map)
 {
 	int	i;
@@ -100,7 +86,6 @@ char	*move_map(char *new_map)
 	return (new_map);
 }
 
-
 int		found_best(char *new_map, char *map)
 {
 	static char alph = 'A';
@@ -126,6 +111,5 @@ int		found_best(char *new_map, char *map)
 		alph--;
 		return (0);
 	}
-	//printf("--Map--\n%s", map);
 	return (1);
 }

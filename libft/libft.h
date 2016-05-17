@@ -21,13 +21,12 @@
 # define INDICE		1
 # define RET		2
 
-typedef struct s_list
+typedef struct		s_list
 {
 	void			*data;
 	struct s_list	*next;
 	struct s_list	*prev;
-}				t_list;
-
+}					t_list;
 
 void				stock_line(char *buf, char *line, int *i, int *var);
 int					get_next_line(int const fd, char **line);

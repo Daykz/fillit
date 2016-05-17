@@ -25,13 +25,6 @@ void	delete_tetri(char *map)
 	}
 }
 
-int		isupper(char c)
-{
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	return (0);
-}
-
 int		len_tetri(char *new_map)
 {
 	int	i;
@@ -58,9 +51,9 @@ int		len_tetri(char *new_map)
 	return (n);
 }
 
-int check_alph(char *map, char alph)
+int		check_alph(char *map, char alph)
 {
-	while(*map)
+	while (*map)
 	{
 		if (*map == alph)
 			return (1);
@@ -84,7 +77,7 @@ void	change_first_map(char *map)
 	}
 }
 
-int		change_diez(char *new_map, char Alph)
+int		change_diez(char *new_map, char alph)
 {
 	int k;
 
@@ -93,7 +86,7 @@ int		change_diez(char *new_map, char Alph)
 	{
 		if (new_map[k] == '#')
 		{
-			new_map[k] = Alph;
+			new_map[k] = alph;
 		}
 		k++;
 	}

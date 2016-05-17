@@ -12,16 +12,16 @@
 
 #include "fillit.h"
 
-int		count_tetri(char *map)
+int			count_tetri(char *map)
 {
-	int i;
-	int j;
-	int ct;
+	int		i;
+	int		j;
+	int		ct;
 
 	i = 0;
 	ct = 21;
 	j = 0;
-	while(map[i])
+	while (map[i])
 	{
 		if (i == ct)
 		{
@@ -33,32 +33,25 @@ int		count_tetri(char *map)
 	return (j + 1);
 }
 
-int 	first_line(char *new_line)
+int			first_line(char *new_line)
 {
-	int i;
+	int		i;
 
 	i = 0;
-
-	while(new_line[i] != '\n')
+	while (new_line[i] != '\n')
 		i++;
 	return (i + 1);
 }
 
-char 	*add_new_space(char *new_map)
+char		*add_new_space(char *new_map)
 {
-	char *n_map;
-	int i;
-	int ct;
+	char	*n_map;
+	int		i;
+	int		ct;
 
-	ct = 0;
 	i = first_line(new_map);
 	n_map = ft_strnew(i * i);
-	while (ct < i)
-	{
-		n_map[ct] = '.';
-		ct++;
-	}
-	n_map[ct++] = '\n';
+	ct = new_space_bis(n_map, i);
 	i = 0;
 	while (new_map[i])
 	{
@@ -68,20 +61,20 @@ char 	*add_new_space(char *new_map)
 			n_map[ct++] = '\n';
 			i++;
 		}
-		else if(new_map[i - 1] == '\n' && new_map[i] == '\n')
+		else if (new_map[i - 1] == '\n' && new_map[i] == '\n')
 		{
 			n_map[ct + 1] = '\0';
-			return (n_map);	
+			return (n_map);
 		}
-		else 
+		else
 			n_map[ct++] = new_map[i++];
 	}
-	return(n_map);
+	return (n_map);
 }
 
 void		display(char *map)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (map[i])
@@ -90,11 +83,11 @@ void		display(char *map)
 		map[i - 1] = '\0';
 }
 
-void	algo(t_tetri tetris)
+void		algo(t_tetri tetris)
 {
-	char *map;
-	char *new_map;
-	int i;
+	char	*map;
+	char	*new_map;
+	int		i;
 
 	map = tetris.tetrimi[0];
 	move_tetri(map);

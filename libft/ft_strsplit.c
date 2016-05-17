@@ -46,7 +46,7 @@ static int		ft_wlen(const char *s, char c)
 	return (len);
 }
 
-int 			check_char(char const *s, char c)
+int				check_char(char const *s, char c)
 {
 	while (*s)
 	{

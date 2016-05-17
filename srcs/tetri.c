@@ -18,11 +18,11 @@ void	init(t_tetri *tetri, char *map)
 	tetri->nbr_tetri = count_tetri(map);
 }
 
-int	**stock_tetri(char *map, t_tetri *tetri)
+int		**stock_tetri(char *map, t_tetri *tetri)
 {
-	int 	i;
-	int 	j;
-	int 	x;
+	int	i;
+	int	j;
+	int	x;
 
 	i = 0;
 	j = 0;
