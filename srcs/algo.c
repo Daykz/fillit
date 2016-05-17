@@ -79,6 +79,8 @@ void		display(char *map)
 	i = 0;
 	while (map[i])
 		i++;
+	if (map[i - 1] == 127)
+		map[i - 2] = '\0';
 	if ((map[i - 1] == '\n') && (map[i - 2] == '\n'))
 		map[i - 1] = '\0';
 }
@@ -104,5 +106,6 @@ void		algo(t_tetri tetris)
 			i++;
 	}
 	display(map);
-	printf("--Map--\n%s", map);
+	ft_putstr("--Map--\n");
+	ft_putstr(map);
 }
